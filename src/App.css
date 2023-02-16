@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.table{
+  margin: 50px 50px 50px 50px;
+}
+
+
+
+
+.logo {
+  height: 32px;
+  margin: 16px;
+  /* background: rgba(255, 255, 255, 0.2); */
+}
+.logo img {
+  height: 40px;
+}
+
+.container {
+    height: 100vh;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .logo img {
+    animation: App-logo-spin infinite 5s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
