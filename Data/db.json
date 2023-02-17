@@ -1,0 +1,160 @@
+{
+  "Data": [
+    {
+      "id": "1",
+      "profile": "./naruto.jpg",
+      "name": "Naruto",
+      "gender": [
+        "Male"
+      ],
+      "email": "Narutoganteng@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "2",
+      "profile": "./sakura.jpg",
+      "name": "Sakura",
+      "gender": [
+        "female"
+      ],
+      "email": "Sakurah@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "3",
+      "profile": "./kakashi.jpg",
+      "name": "Kakashi",
+      "gender": [
+        "Male"
+      ],
+      "email": "kakashisan@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "4",
+      "name": "Madara",
+      "profile": "./madara.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "Madara@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "Itachi",
+      "profile": "./itachi.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "itachi@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Hyugan",
+      "profile": "./hyugan.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "hyuganojutsu@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "7",
+      "name": "Boruto",
+      "profile": "./boruto.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "borutosan@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "8",
+      "name": "Boruto",
+      "profile": "./boruto.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "borutosan@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "9",
+      "name": "Boruto",
+      "profile": "./boruto.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "borutosan@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "10",
+      "name": "Boruto",
+      "profile": "./boruto.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "borutosan@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Boruto",
+      "profile": "./boruto.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "borutosan@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    },
+    {
+      "id": "12",
+      "name": "Boruto",
+      "profile": "./boruto.jpg",
+      "gender": [
+        "Male"
+      ],
+      "email": "borutosan@gmail.com",
+      "address": "New York No. 1 Lake Park",
+      "tags": [
+        "developer"
+      ]
+    }
+  ]
+}

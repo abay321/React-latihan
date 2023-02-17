@@ -9,7 +9,7 @@ const { Header, Content, /*Footer,*/ Sider } = Layout;
 
 
 
-const Dashboard = () => {
+export const Home = () => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -66,4 +66,3 @@ const Dashboard = () => {
     </Layout>
   );
 };
-export default Dashboard;

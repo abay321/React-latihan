@@ -1,124 +1,82 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+// import { ExclamationCircleFilled } from "@ant-design/icons";
 import { Avatar, Tag, Table, Tooltip, Button, Modal, Space } from "antd";
 import * as AiIcons from "react-icons/ai";
-
-const data = [
-  {
-    key: "1",
-    profile: "./naruto.jpg",
-    name: "Naruto",
-    gender: ["Male"],
-    email: "Narutoganteng@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "2",
-    profile: "./sakura.jpg",
-    name: "Sakura",
-    gender: ["female"],
-    email: "Sakurah@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "3",
-    profile: "./kakashi.jpg",
-    name: "Kakashi",
-    gender: ["Male"],
-    email: "kakashisan@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "4",
-    name: "Madara",
-    profile: "./madara.jpg",
-    gender: ["Male"],
-    email: "Madara@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "5",
-    name: "Itachi",
-    profile: "./itachi.jpg",
-    gender: ["Male"],
-    email: "itachi@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "6",
-    name: "Hyugan",
-    profile: "./hyugan.jpg",
-    gender: ["Male"],
-    email: "hyuganojutsu@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "7",
-    name: "Boruto",
-    profile: "./boruto.jpg",
-    gender: ["Male"],
-    email: "borutosan@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "8",
-    name: "Boruto",
-    profile: "./boruto.jpg",
-    gender: ["Male"],
-    email: "borutosan@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "9",
-    name: "Boruto",
-    profile: "./boruto.jpg",
-    gender: ["Male"],
-    email: "borutosan@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "10",
-    name: "Boruto",
-    profile: "./boruto.jpg",
-    gender: ["Male"],
-    email: "borutosan@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "11",
-    name: "Boruto",
-    profile: "./boruto.jpg",
-    gender: ["Male"],
-    email: "borutosan@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-  {
-    key: "12",
-    name: "Boruto",
-    profile: "./boruto.jpg",
-    gender: ["Male"],
-    email: "borutosan@gmail.com",
-    address: "New York No. 1 Lake Park",
-    tags: ["developer"],
-  },
-];
+import axios from "axios";
 
 const EmployeeData = () => {
+  // Fetch Axios
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("http://localhost:9000/Data")
+  //     .then((response) => {
+  //       setData(response.data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
+  const [data, setData] = useState([]);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:9000/Data");
+      setData(response.data);
+    } catch (err) {
+      setError(err);
+    }
+  };
+
+  const deleteData = async (id) => {
+    try {
+      await axios.delete(`http://localhost:9000/Data/${id}`);
+      setData(data.filter(item => item.id !== id));
+    } catch (err) {
+      setError(err);
+    }
+  };
+  
+
+
+
+  // Modal
+  // const { confirm } = Modal;
+  // const showDeleteConfirm = () => {
+  //   confirm({
+  //     title: "Are you sure delete this colums?",
+  //     // icon: <ExclamationCircleFilled />,
+  //     // content: 'Some descriptions',
+  //     okText: "Yes",
+  //     okType: "danger",
+  //     cancelText: "No",
+  //     onOk() {
+  //       deleteData(data.id)
+  //             // onClick={() => deleteData(data.id)}
+  //       console.log("OK");
+
+  //     },
+  //     onCancel() {
+  //       console.log("Cancel");
+  //     },
+  //   });
+  // };
+
+ 
+
   const columns = [
     {
       title: "Profil",
       dataIndex: "profile",
       fixed: "left",
-      key: "profile",
+      key: "profile1",
       width: 100,
       align: "center",
       render: (profile) => {
@@ -152,7 +110,7 @@ const EmployeeData = () => {
       ),
     },
     {
-      title: "Job Role",
+      title: "Job role",
       key: "job_role",
       dataIndex: "job_role",
       align: "center",
@@ -186,10 +144,14 @@ const EmployeeData = () => {
       fixed: "right",
       width: 150,
       align: "center",
-      render: (_) => {
+      render: (_) => (
         <div>
           <Tooltip placement="topRight" title="Delete">
-            <Button type="primary" danger className="del-button-table-dashboard">
+            <Button
+              type="primary"
+              className="button-anjay"
+              onClick={() => deleteData(data.id)}
+            >
               <AiIcons.AiOutlineDelete />
             </Button>
           </Tooltip>
@@ -200,23 +162,32 @@ const EmployeeData = () => {
             </Button>
           </Tooltip>
         </div>
-      },
+      ),
     },
   ];
   return (
-    <div>
+    <div className="table-anjay">
       <Table
-      size="small"
-        className="isi-tabel"
+        size="small"
         columns={columns}
-        dataSource={data}
+        dataSource={data.map((data) => {
+          return {
+            key: data.key,
+            profile: data.profile,
+            name: data.name,
+            gender: data.gender,
+            email: data.email,
+            address: data.address,
+            tags: data.tags,
+          };
+        })}
         bordered
         pagination={{
           pageSize: 10,
           position: ["bottomCenter"],
         }}
         scroll={{
-          y: 350,
+          y: 400,
           x: 1500,
         }}
       />

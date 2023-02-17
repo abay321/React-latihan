@@ -3,9 +3,15 @@
     padding: 0;
 }
 
-.table{
+.table-anjay{
   margin: 50px 50px 50px 50px;
 }
+
+.button-anjay {
+/* background-color: black; */
+margin: 10px;
+}
+
 
 
 
